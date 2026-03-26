@@ -177,11 +177,10 @@ body {
         justify-items: center;
     }
 
-    .container__section__block {
+    .container__section-block {
         width: 100%;
         max-width: 120px;
         min-width: 100px;
-        text-align: center;
     }
 
     .container__section-icon {
@@ -236,13 +235,14 @@ body {
     }
 
     .container__section {
-        width: 85%;
+        width: 95%;
+        grid-template-rows: repeat(2, 200px);
         gap: 16px;
         margin-bottom: 40px;
     }
 
-    .container__section__block {
-        max-width: 300px;
+    .container__section-block {
+       max-width: 150px;
     }
 
     .container__section-icon {

@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(35deg,#F04949 50%,#F26D6D 50%);
+}
+
+
+/* Button */
+.button_container {
+    padding: 12px 56px;
+    width: 148px;
+    height: 38px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 0;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    font-weight: 400;
+    font-size: 12px;
+    z-index: 2;
+} 
+
+.button_container:hover {
+    cursor: pointer;
+}
+
+
+
+/* Container
+================*/
+.container {
+    width: 552px;
+    min-height: 467px;
+    opacity: 1;
+    border-radius: 4px;
+    background: #FFFFFF;
+    
+    max-height: 100%;
+    overflow-y: auto;
+    z-index: 1;
+    
+}
+
+.hidden { 
+    opacity: 0; 
+    pointer-events: none; 
+}
+.visible { 
+    opacity: 1; 
+    pointer-events: auto;
+}
+
+.button_container,
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* Container Toolbar
+================*/
+.container__toolbar {
+    background: #E8EBF3;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-left: 15px;
+}
+
+.container__toolbar-button {
+    width: 8px;
+    height: 8px;
+    top: 8px;
+    left: 15px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #E85162;
+}
+
+.red:hover {
+    cursor: pointer;
+}
+
+.yellow {
+    background: #F29B3D;
+}
+
+.green {
+    background: #40AB55;
+}
+
+/* Container Header
+================*/
+.container__header {
+    background: #DAE0E4;
+    position: relative;
+    height: 121px;
+}
+
+.container__header-title {
+    background: #C5CBCF;
+    position: absolute;
+    height: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+.container__header-title.subtitle {
+    top: 40px;
+    width: 114px;
+}
+
+.container__header-title.title {
+    top: 66px; 
+    width: 41px;
+}
+
+
+/* Container Section
+================*/
+.container__section {
+    display: grid;
+    width: 348px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 143px);
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.container__section-block {
+    width: 100px;
+    padding: 0 8px;
+}
+
+.container__section-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    background: #DAE0E4;
+}
+
+.container__section-button {
+    width: var(--btn-width, 50px);
+    height: 15px;
+    border-radius: 4px;
+    background: #C6CACD;
+    margin-top: 12px;
+}
+
+
+/* Adaptive
+================*/
+@media (max-width: 991px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    .container__section {
+        width: 300px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .container__section__block {
+        width: 100%;
+        max-width: 120px;
+        min-width: 100px;
+        text-align: center;
+    }
+
+    .container__section-icon {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+/* Adaptive
+================*/
+@media (max-width: 544px) {
+
+    .button_container {
+        font-size: 1.5rem;
+        min-width: 200px;
+        height: 56px;
+    }
+
+    .container {
+        width: 95%;
+        border-radius: 20px;
+    }
+
+
+    .container__toolbar {
+        height: 50px;
+        padding-left: 10px
+    }
+
+    .container__header {
+        height: 200px;
+    }
+
+    .container__toolbar-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    
+    .container__header-title.subtitle {
+        height: 40px;
+        width: 210px;
+        top: 40px;
+    }
+
+    .container__header-title.title {
+        height: 40px;
+        width: 120px;
+        top: 110px;
+    }
+
+    .container__section {
+        width: 85%;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .container__section__block {
+        max-width: 300px;
+    }
+
+    .container__section-icon {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
